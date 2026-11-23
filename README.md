@@ -32,8 +32,12 @@ The settings page lists the resolved rules and flags unknown authors.
 
 ## Installation
 
+The plugin directory must be named `redmine_author_auto_watchers` (with underscores),
+otherwise Redmine fails to start with `Redmine::PluginNotFound`:
+
 ```
-cp -r redmine_author_auto_watchers /opt/redmine/plugins/
+cd /opt/redmine/plugins
+git clone https://github.com/monobilisim/redmine-author-auto-watchers.git redmine_author_auto_watchers
 systemctl restart puma
 ```
 
