@@ -1,0 +1,25 @@
+<p>
+  <label for="settings_rules"><%= l(:label_author_auto_watchers_rules) %></label>
+  <%= text_area_tag 'settings[rules]', @settings['rules'], rows: 12, class: 'wiki-edit', id: 'settings_rules',
+                    placeholder: 'alice@example.com: bob@example.com' %>
+  <em class="info"><%= l(:text_author_auto_watchers_rules_info) %></em>
+</p>
+
+<% rules = RedmineAuthorAutoWatchers::Rules.parse(@settings['rules']) %>
+<% if rules.any? %>
+<p>
+  <label><%= l(:label_author_auto_watchers_preview) %></label>
+  <span>
+  <% rules.each do |author_key, watcher_keys| %>
+    <% author = User.find_by_login(author_key) || User.find_by_mail(author_key) %>
+    <% if author %>
+      <%= link_to_user author %> &rarr;
+      <%= safe_join(RedmineAuthorAutoWatchers::Rules.watchers_for(author, "#{author_key}: #{watcher_keys.join(', ')}").map {|u| link_to_user(u)}, ', ') %>
+    <% else %>
+      <span class="icon icon-warning"><%= author_key %>: <%= l(:text_author_auto_watchers_user_not_found) %></span>
+    <% end %>
+    <br>
+  <% end %>
+  </span>
+</p>
+<% end %>

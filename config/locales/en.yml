@@ -1,0 +1,5 @@
+en:
+  label_author_auto_watchers_rules: "Rules"
+  label_author_auto_watchers_preview: "Active rules"
+  text_author_auto_watchers_rules_info: "One rule per line: author: watcher1, watcher2. Users are identified by login or email address. Watchers who can view issues in the project are added automatically to new issues created by the author. Lines starting with # are ignored."
+  text_author_auto_watchers_user_not_found: "user not found"

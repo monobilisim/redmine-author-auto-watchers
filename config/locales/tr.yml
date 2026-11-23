@@ -1,0 +1,5 @@
+tr:
+  label_author_auto_watchers_rules: "Kurallar"
+  label_author_auto_watchers_preview: "Etkin kurallar"
+  text_author_auto_watchers_rules_info: "Her satıra bir kural: yazar: izleyici1, izleyici2. Kullanıcılar giriş adı veya e-posta adresiyle yazılır. Yazarın açtığı yeni işlere, projede iş görme yetkisi olan izleyiciler otomatik eklenir. # ile başlayan satırlar yok sayılır."
+  text_author_auto_watchers_user_not_found: "kullanıcı bulunamadı"
