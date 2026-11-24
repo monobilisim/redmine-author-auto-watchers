@@ -37,7 +37,7 @@ otherwise Redmine fails to start with `Redmine::PluginNotFound`:
 
 ```
 cd /opt/redmine/plugins
-git clone https://github.com/monobilisim/redmine-author-auto-watchers.git redmine_author_auto_watchers
+git clone https://github.com/monobilisim/redmine_author_auto_watchers.git
 systemctl restart puma
 ```
 
